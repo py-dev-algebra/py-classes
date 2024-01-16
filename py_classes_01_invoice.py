@@ -24,3 +24,4 @@ print(f'DATUM: {racun_ukupan_iznos}')
 print(f'DATUM: {racun_pdv}')
 print(f'DATUM: {racun_ukupan_iznos_pdv}')
 
+# Problem s dodavanjem novog racuna
