@@ -67,6 +67,6 @@ racuni.append(racun_2)
 
 
 for racun in racuni:
-    racun.ispis()    
+    racun.ispis()
     print(racun.racun_broj)
     print()
