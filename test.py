@@ -11,15 +11,17 @@ class Osoba:
 
 
 class FizickaOsoba(Osoba):
-    def __init__(self, last_name, ime, email, mobitel, adresa) -> None:
+    def __init__(self, prezime, ime, email, mobitel, adresa) -> None:
         super().__init__(ime, email, mobitel, adresa)
-        self.last_name = last_name
+        self.prezime = prezime
 
 
 class PravnaOsoba(Osoba):
     def __init__(self, ime, email, mobitel, adresa, djelatnost) -> None:
         super().__init__(ime, email, mobitel, adresa)
         self.djelatnost = djelatnost
+
+
 
 
 def kreiraj_kupca(je_firma: bool = True):
@@ -29,7 +31,7 @@ def kreiraj_kupca(je_firma: bool = True):
     adresa = input('Upisite postanska adresu: ')
     e_mail = input('Upisite email: ')
     prezime = ''
-    
+
     if je_firma:
         naziv = input('Upisite naziv: ')
     else:
@@ -40,14 +42,14 @@ def kreiraj_kupca(je_firma: bool = True):
         'ime': naziv,
         'prezime': prezime,
         'adresa': adresa,
-        'email': e_mail # info@firma.hr
+        'email': e_mail
     }
 
-    kupac = FizickaOsoba(last_name=prezime, ime=naziv, mobitel='09_ 1234 567', adresa=adresa, email=e_mail)
+    kupac = FizickaOsoba(prezime=prezime, ime=naziv, mobitel='09 1234 567', adresa=adresa, email=e_mail)
     kupac.ime
     kupac.email_adresa
 
-    kupac2 = PravnaOsoba(naziv, e_mail, '09_ 1234 987', adresa, 'Python programiranje')
+    kupac2 = PravnaOsoba(naziv, e_mail, '09 1234 987', adresa, 'Python programiranje')
     kupac2.djelatnost
     kupac2.email_adresa
 
@@ -69,8 +71,7 @@ while True:
     match izbor:
         case 1:
             kreiraj_kupca(je_firma=False)
-            
-            
+
         case 2:
             kreiraj_kupca()
 
@@ -79,4 +80,3 @@ while True:
 
 
 print('Dovidenja!')
-
