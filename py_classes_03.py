@@ -5,21 +5,20 @@ brojac = 0
 
 class FizickaOsoba:
     def __init__(self, prezime, ime, email, mobitel, adresa) -> None:
-        self.prezime = ''
-        self.ime = ''
-        self.email = ''
-        self.mobitel = ''
-        self.adresa = ''
+        self.prezime = prezime
+        self.ime = ime
+        self.email = email
+        self.mobitel = mobitel
+        self.adresa = adresa
 
 
 class PravnaOsoba:
-    def __init__(self, prezime, ime, email, mobitel, adresa, djelatnost) -> None:
-        self.prezime = ''
-        self.ime = ''
-        self.email = ''
-        self.mobitel = ''
-        self.adresa = ''
-        self.djelatnost = ''
+    def __init__(self, ime, email, mobitel, adresa, djelatnost) -> None:
+        self.ime = ime
+        self.email = email
+        self.mobitel = mobitel
+        self.adresa = adresa
+        self.djelatnost = djelatnost
 
 
 
