@@ -1,23 +1,24 @@
-
-
 baza = {}
 brojac = 0
 
-class FizickaOsoba:
+
+class Osoba:
+    def __init__(self, ime, email_adresa, mobitel, adresa) -> None:
+        self.ime = ime
+        self.email_adresa = email_adresa
+        self.mobitel = mobitel
+        self.adresa = adresa
+
+
+class FizickaOsoba(Osoba):
     def __init__(self, prezime, ime, email, mobitel, adresa) -> None:
+        super().__init__(ime, email, mobitel, adresa)
         self.prezime = prezime
-        self.ime = ime
-        self.email = email
-        self.mobitel = mobitel
-        self.adresa = adresa
 
 
-class PravnaOsoba:
+class PravnaOsoba(Osoba):
     def __init__(self, ime, email, mobitel, adresa, djelatnost) -> None:
-        self.ime = ime
-        self.email = email
-        self.mobitel = mobitel
-        self.adresa = adresa
+        super().__init__(ime, email, mobitel, adresa)
         self.djelatnost = djelatnost
 
 
@@ -28,7 +29,7 @@ def kreiraj_kupca(je_firma: bool = True):
     global baza
 
     adresa = input('Upisite postanska adresu: ')
-    email = input('Upisite email: ')
+    e_mail = input('Upisite email: ')
     prezime = ''
     
     if je_firma:
@@ -41,8 +42,19 @@ def kreiraj_kupca(je_firma: bool = True):
         'ime': naziv,
         'prezime': prezime,
         'adresa': adresa,
-        'email': email
+        'email': e_mail
     }
+
+    kupac = FizickaOsoba(prezime, naziv, '09_ 1234 567', adresa, email=e_mail)
+    kupac.ime
+    kupac.email_adresa
+
+    kupac2 = PravnaOsoba(naziv, e_mail, '09_ 1234 987', adresa, 'Python programiranje')
+    kupac2.djelatnost
+    kupac2.email_adresa
+
+    baza[brojac + 1] = kupac
+    baza[brojac + 1] = kupac2
 
 
 while True:
